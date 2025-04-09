@@ -1,0 +1,83 @@
+create database CIS11051;
+USE CIS11051;
+CREATE TABLE Students(ID INT,Name VARCHAR(20),Total_Marks INT,gpa DECIMAL(3,2),class VARCHAR(20),gender VARCHAR(20));
+INSERT INTO Students(ID,Name,Total_Marks,gpa,class,gender)
+VALUES
+(1,'John deo',89,3.8,'First','male'),
+(2,'Max Ruin',45,2.5,'Second lower','male'),
+(3,'Arnoid',72,3.3,'Second Upper','Female'),
+(4,'Mary Mike',67,3.4,'Second Upper','Female'),
+(5,'Asruk',52,2.8,'Second Lower','male'),
+(6,'Tes Qry',90,3.82,'First','Female'),
+(7,'Big John',40,2.0,'Pass','male'),
+(8,'Alex',78,3.6,'Second Upper','male'),
+(9,'Alpha',39,2.0,'Pass','Female'),
+(10,'Krish',82,3.71,'First','male'),
+
+DESC Students;
+
+SELECT * FROM Students;
+
+1.       
+SELECT * FROM Students WHERE Total_Marks BETWEEN 50 AND 80;
+
+2.
+SELECT * FROM Students WHERE GPA BETWEEN 3.0 AND 3.7;
+
+3.
+SELECT * FROM Students WHERE class IN ('First','Pass');
+
+4.
+SELECT * FROM Students WHERE ID IN (2,4,6);
+
+5.
+SELECT * FROM Students WHERE Name LIKE 'A%';
+
+6.
+SELECT * FROM Students WHERE Name LIKE '%n';
+
+7.
+SELECT * FROM Students WHERE Name LIKE '%oh%';
+
+8.
+SELECT * FROM Students WHERE Name LIKE '_____';
+
+9.
+SELECT Name,gender FROM Students WHERE Name LIKE '_____';
+
+10.
+SELECT ID,Name FROM Students WHERE Name LIKE '_a%';
+
+11.
+SELECT * FROM Students WHERE Name LIKE '____' and Name LIKE '%x';
+SELECT * FROM Students WHERE Name LIKE '___%x';
+
+12.
+SELECT * FROM Students WHERE gender='Female' and gpa<3.5 and class='Second Upper';
+
+13.
+SELECT * FROM Students WHERE Total_Marks>60 and class='Second Upper';
+
+14.
+SELECT * FROM Students WHERE gender='male' and gpa<2.5;
+
+15.
+SELECT * FROM Students WHERE Total_Marks>85  OR class='First';
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+Name,Total_Marks
+FROM Students
+WHERE age BETWEEN30 AND40
