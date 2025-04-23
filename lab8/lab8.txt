@@ -1,0 +1,44 @@
+create database lab8;
+
+use lab8;
+
+create table student(student_id INT primary key,first_name VARCHAR(50) NOT NULL,last_name VARCHAR(50) NOT NULL,age INT,email VARCHAR(100) UNIQUE);  
+
+insert into student(student_id,first_name,last_name,age,email)
+values (1,"John","Doe",22,"john@example.com"),
+(2,"Jane","Smith",20,"jane@example.com"),
+(3,"Michael","Johnson",23,"michael@example.com"),
+(4,"Emily","Davis",21,"emily@example.com"),
+(5,"David","Martinez",24,"david@example.com"),
+(6,"Sarah","Brown",22,"sarah@example.com"),
+(7,"James","Wilson",25,"wilson@example.com");
+
+select * from student;
+
+ALTER TABLE student ADD phone_number VARCHAR(20) NOT NULL;
+
+ALTER TABLE student ADD SPGA VARCHAR(20) DEFAULT 'Pending';
+
+ALTER TABLE student DROP COLUMN phone_number;
+
+ALTER TABLE student MODIFY Age int NOT NULL;
+
+create table courses(course_id INT primary key,Course_name VARCHAR(100) NOT NULL);
+
+insert into courses(course_id,Course_name)
+values(1,"Mathematics"),
+(2,"Mathematics"),
+(3,"Science"),
+(4,"English"),
+(5,"History"),
+(6,"Computer Science"),
+(7,"Physical Education"); 
+
+select * from courses;
+
+ALTER TABLE courses ADD COLUMN student_id INT;
+
+ALTER TABLE courses ADD CONSTRAINT fk_student FOREIGN KEY (student_id) REFERENCES student(student_id);
+
+ALTER TABLE student ADD CONSTRAINT chk_age CHECK (age >= 18);
+
